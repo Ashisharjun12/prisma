@@ -1,4 +1,5 @@
 import express from "express"
+import userRouter from "./routes/userRoute.js"
 
 
 const app = express()
@@ -13,12 +14,10 @@ app.use(express.urlencoded({extended:true}))
 
 
 
-app.listen(PORT , ()=>{
-    console.log(`server is running at ${PORT}`)
-    
-})
+
 
 //define routes
+app.use('/api/v1' , userRouter)
 
 
 
